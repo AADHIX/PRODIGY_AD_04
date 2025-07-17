@@ -6,11 +6,11 @@ class ProfileNavBar extends StatelessWidget {
   final String userEmail;
 
   const ProfileNavBar({
-    Key? key,
+    super.key,
     this.profileImageUrl,
     required this.userName,
     required this.userEmail,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,10 @@ class ProfileNavBar extends StatelessWidget {
             backgroundImage: profileImageUrl != null && profileImageUrl!.isNotEmpty
                 ? NetworkImage(profileImageUrl!)
                 : null,
+            backgroundColor: Colors.grey[400],
             child: profileImageUrl == null || profileImageUrl!.isEmpty
                 ? const Icon(Icons.person, size: 32, color: Colors.white)
                 : null,
-            backgroundColor: Colors.grey[400],
           ),
           const SizedBox(width: 16),
           Column(
