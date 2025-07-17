@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'profile_navbar.dart';
 
 void main() {
   runApp(const TicTacToeApp());
@@ -47,6 +48,12 @@ class EntryScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const ProfileNavBar(
+                userName: 'John Doe',
+                userEmail: 'john.doe@example.com',
+                profileImageUrl: '', // Add a URL or leave blank for placeholder
+              ),
+              const SizedBox(height: 16),
               const Spacer(flex: 2),
               Text(
                 'TIC TAC TOE',
