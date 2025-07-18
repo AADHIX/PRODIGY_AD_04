@@ -34,6 +34,7 @@ dependencies:
   confetti: ^0.8.0
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:
@@ -55,3 +56,4 @@ flutter:
 
   assets:
     - assets/images/tictactoe.png
+    - assets/animations/game_splash.json
