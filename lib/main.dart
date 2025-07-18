@@ -97,8 +97,8 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             ),
             const SizedBox(height: 30),
             Text(
-              'Loading  Tic Tac Toe...',
-              style: GoogleFonts.poppins(
+              'Tic.. Tic Tac Toe...',
+              style: GoogleFonts.notoNaskhArabic(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -106,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             ),
             const SizedBox(height: 20),
             const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurpleAccent),
+              valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 249, 249, 250)),
             ),
             if (_showManualButton) ...[
               const SizedBox(height: 30),
