@@ -16,7 +16,7 @@ class TicTacToeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Neon Tic Tac Toe',
+      title: ' Tic Tac Toe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -24,7 +24,7 @@ class TicTacToeApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
-        textTheme: GoogleFonts.poppinsTextTheme(),
+        textTheme: GoogleFonts.pacificoTextTheme(),
       ),
       home: const SplashScreen(),
     );
@@ -97,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             ),
             const SizedBox(height: 30),
             Text(
-              'Loading Neon Tic Tac Toe...',
+              'Loading  Tic Tac Toe...',
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -185,7 +185,7 @@ class EntryScreen extends StatelessWidget {
         stops: [0.3, 0.7],
       ).createShader(bounds),
       child: Text(
-        'NEON TIC TAC TOE',
+        ' TIC TAC TOE',
         style: GoogleFonts.poppins(
           fontSize: 36,
           fontWeight: FontWeight.bold,
@@ -198,7 +198,7 @@ class EntryScreen extends StatelessWidget {
 
   Widget _buildSubtitle() {
     return Text(
-      'Glow Edition',
+      'version ad.01',
       style: GoogleFonts.poppins(
         fontSize: 20,
         color: Colors.white70,
@@ -265,7 +265,7 @@ class EntryScreen extends StatelessWidget {
       onPressed: () => _showHowToPlayDialog(context),
       child: Text(
         'HOW TO PLAY',
-        style: GoogleFonts.poppins(
+        style: GoogleFonts.rubik(
           color: Colors.white70,
           fontSize: 16,
         ),
@@ -280,7 +280,7 @@ class EntryScreen extends StatelessWidget {
         backgroundColor: Colors.deepPurple.shade900,
         title: const Text('How to Play', style: TextStyle(color: Colors.white)),
         content: const Text(
-          'The classic Tic Tac Toe game with a neon twist:\n\n'
+          'The classic Tic Tac Toe game with a attractive twist:\n\n'
           '1. Players alternate placing X and O marks\n'
           '2. First to get 3 in a row wins\n'
           '3. Can be horizontal, vertical or diagonal\n'
@@ -493,7 +493,7 @@ class _GameScreenState extends State<GameScreen> {
         colors: [Colors.purpleAccent, Colors.blueAccent],
       ).createShader(bounds),
       child: const Text(
-        'Neon Tic Tac Toe',
+        ' Tic Tac Toe',
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
