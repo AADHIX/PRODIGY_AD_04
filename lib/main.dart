@@ -49,10 +49,12 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       duration: const Duration(seconds: 2),
       vsync: this,
     )..forward().then((_) {
-        if (mounted) Navigator.pushReplacement(
+        if (mounted) {
+          Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (_) => const EntryScreen()),
         );
+        }
       });
 
     Future.delayed(const Duration(seconds: 3), () {
