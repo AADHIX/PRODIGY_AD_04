@@ -40,6 +40,7 @@ MaterialApp
 
 text
 
+
 ## Game Logic
 - **State Management**: Uses `setState` for local state
 - **Win Detection**: Checks rows, columns, and diagonals
@@ -50,23 +51,13 @@ text
 1. Ensure Flutter is installed
 2. Clone this repository
 3. Run:
-```bash
-
-
-flutter pub get
-flutter run
-Dependencies
-confetti: For celebration effects
-
-lottie: For splash screen animation
-
-google_fonts: For custom typography
-
-
+bash
+   ###flutter pub get
+   ###flutter run
 
 ## SCreenshot 
 Splash Screen	Main Menu	Gameplay
-<img src="screenshots/splash.png" width="200">	<img src="screenshots/menu.png" width="200">	<img src="screenshots/game.png" width="200">
+<img src="screenshots/menu.png" width="200">	<img src="screenshots/game.png" width="200">
 Contribution
 Feel free to submit issues or PRs for:
 
