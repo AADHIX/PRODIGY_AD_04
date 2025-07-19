@@ -662,7 +662,7 @@ class _GameScreenState extends State<GameScreen> {
       icon: const Icon(Icons.refresh),
       label: const Text(
         'New Game',
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
       ),
       style: _buildResetButtonStyle(),
     ),
