@@ -656,7 +656,7 @@ class _GameScreenState extends State<GameScreen> {
 
  Widget _buildResetButton() {
   return Padding(
-    padding: const EdgeInsets.only(top: 30.0, bottom: 20),
+    padding: const EdgeInsets.only(top: 30.0, bottom: 10),
     child: ElevatedButton.icon(
       onPressed: resetGame,
       icon: const Icon(Icons.refresh),
