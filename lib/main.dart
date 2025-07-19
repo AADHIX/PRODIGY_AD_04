@@ -21,7 +21,7 @@ class TicTacToeApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
         ),
         useMaterial3: true,
         textTheme: GoogleFonts.pacificoTextTheme(),
@@ -39,35 +39,27 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
-  late AnimationController _controller;
+  late final AnimationController _controller;
   bool _showManualButton = false;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
       vsync: this,
-    );
+    )..forward().then((_) {
+        if (mounted) Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const EntryScreen()),
+        );
+      });
 
-    _controller.forward().then((_) {
-      if (mounted) {
-        _navigateToEntryScreen();
-      }
-    });
-
-    // Show manual button after 5 seconds if still on splash screen
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (mounted && _controller.isAnimating) {
         setState(() => _showManualButton = true);
       }
     });
-  }
-
-  void _navigateToEntryScreen() {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const EntryScreen()),
-    );
   }
 
   @override
@@ -87,49 +79,33 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             Lottie.asset(
               'assets/animations/game_splash.json',
               controller: _controller,
-              height: 300,
+              height: 250,
               fit: BoxFit.contain,
-              onLoaded: (composition) {
-                _controller
-                  ..duration = composition.duration
-                  ..forward();
-              },
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             Text(
-              'Tic.. Tic Tac Toe...',
-              style: GoogleFonts.notoNaskhArabic(
-                fontSize: 20,
+              'Tic Tac Toe',
+              style: GoogleFonts.poppins(
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             const SizedBox(height: 20),
-            const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 249, 249, 250)),
-            ),
+            const CircularProgressIndicator(),
             if (_showManualButton) ...[
-              const SizedBox(height: 30),
-              _buildManualEnterButton(),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const EntryScreen()),
+                ),
+                child: const Text('Enter Game'),
+              ),
             ],
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildManualEnterButton() {
-    return ElevatedButton(
-      onPressed: _navigateToEntryScreen,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurpleAccent,
-        foregroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-      ),
-      child: const Text('Enter Game'),
     );
   }
 }
@@ -286,12 +262,12 @@ class EntryScreen extends StatelessWidget {
           '3. Can be horizontal, vertical or diagonal\n'
           '4. Tap any square to place your mark\n'
           '5. Press New Game to reset',
-          style: TextStyle(color: Colors.white70),
+          style: TextStyle(color: Color.fromARGB(255, 253, 253, 253)),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Got it!', style: TextStyle(color: Colors.purpleAccent)),
+            child: const Text('Got it!', style: TextStyle(color: Color.fromARGB(255, 59, 103, 245))),
           ),
         ],
       ),
@@ -600,8 +576,8 @@ class _GameScreenState extends State<GameScreen> {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          Colors.deepPurple.shade800.withOpacity(0.3),
-          Colors.blue.shade800.withOpacity(0.3),
+          Colors.deepPurple.shade800,
+          Colors.blue.shade800,
         ],
       ),
       borderRadius: BorderRadius.circular(16),
@@ -678,17 +654,20 @@ class _GameScreenState extends State<GameScreen> {
     );
   }
 
-  Widget _buildResetButton() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 30.0, bottom: 20),
-      child: ElevatedButton.icon(
-        onPressed: resetGame,
-        icon: const Icon(Icons.refresh),
-        label: const Text('New Game'),
-        style: _buildResetButtonStyle(),
+ Widget _buildResetButton() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 30.0, bottom: 20),
+    child: ElevatedButton.icon(
+      onPressed: resetGame,
+      icon: const Icon(Icons.refresh),
+      label: const Text(
+        'New Game',
+        style: TextStyle(color: Colors.black),
       ),
-    );
-  }
+      style: _buildResetButtonStyle(),
+    ),
+  );
+}
 
   ButtonStyle _buildResetButtonStyle() {
     return ElevatedButton.styleFrom(
@@ -698,11 +677,11 @@ class _GameScreenState extends State<GameScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
         side: const BorderSide(
-          color: Colors.purpleAccent,
+          color: Color.fromARGB(255, 226, 91, 250),
           width: 2,
         ),
       ),
-      shadowColor: Colors.purpleAccent.withOpacity(0.5),
+      shadowColor: const Color.fromARGB(255, 149, 28, 170).withOpacity(0.5),
       elevation: 10,
     );
   }
