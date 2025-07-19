@@ -445,17 +445,17 @@ class _GameScreenState extends State<GameScreen> {
       title: _buildAppBarTitle(),
       centerTitle: true,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.history),
+          icon: const Icon(Icons.history ,  color: Colors.white),
           onPressed: () => _showGameHistory(context),
           tooltip: 'Game History',
         ),
         IconButton(
-          icon: const Icon(Icons.refresh),
+          icon: const Icon(Icons.refresh , color: Colors.white),
           onPressed: resetGame,
           tooltip: 'Reset Game',
         ),
