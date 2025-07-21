@@ -93,4 +93,4 @@ Key points about this README:
 5. **Visual Aids**: Placeholders for screenshots
 6. **Future Scope**: Suggests improvement areas
 
-For actual screenshots, replace the placeholder paths with your real screenshot paths after adding them to a `screenshots` folder in your repo. The markdown uses GitHub-flavored syntax for optimal display on your repository page.
+
