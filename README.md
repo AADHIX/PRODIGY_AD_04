@@ -56,8 +56,19 @@ bash
    ###flutter run
 
 ## SCreenshot 
-Splash Screen	Main Menu	Gameplay
-<img src="screenshots/menu.png" width="200">	<img src="screenshots/game.png" width="200">
+###	Entry Screen	Gameplay
+
+<img width="221" height="463" alt="Screenshot 2025-07-21 112414" src="https://github.com/user-attachments/assets/d0a7efdb-0045-4920-80c0-08b11fa7fc0a" />
+
+###   Game Play Screen
+
+<img width="215" height="463" alt="Screenshot 2025-07-21 112434" src="https://github.com/user-attachments/assets/80223ff1-207e-49d4-aa47-794829c60032" />
+
+### Game Play Screen & cconfetti celebrations.
+
+<img width="217" height="465" alt="Screenshot 2025-07-21 112504" src="https://github.com/user-attachments/assets/bde4f50f-3877-44e0-8b88-00afa903bf14" />
+
+
 Contribution
 Feel free to submit issues or PRs for:
 
