@@ -1,4 +1,4 @@
-# Neon Tic Tac Toe 🎮✨
+#  Tic Tac Toe Game Application 🎮✨
 
 A modern Flutter implementation of the classic Tic Tac Toe game with neon aesthetics, animations, and confetti celebrations.
 
